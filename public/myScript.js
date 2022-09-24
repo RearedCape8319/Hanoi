@@ -108,13 +108,13 @@ function draw() {
  * - Endure the click is valid
  * - Tell the puzzle that a click occured and in what spot
  */
-// let pressing = false;
-
+let pressing = false;
 function touchStarted() {
-    // if (pressing) {
-    //     return;
-    // }
-    // pressing = true;
+    if (pressing) {
+        pressing = false;
+        return;
+    }
+    pressing = true;
     let xoff = (width - viewWidth) * 0.5;
     let yoff = (height - viewHeight) * 0.5;
     if (mouseX < xoff || mouseX > width-xoff || mouseY < yoff || mouseY > height-yoff) {
