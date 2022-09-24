@@ -23,7 +23,10 @@ let discMaxWidth, discMinWidth, discHeight;
 function setup() {
 
     // Setup graphics
-    createCanvas(405, 720);
+    let host = document.getElementById("sketch-holder");
+    let posinfo = host.getBoundingClientRect();
+    canvas = createCanvas(posinfo.width, posinfo.height);
+    canvas.parent("sketch-holder");
     colorMode(HSB, 360, 100, 100, 100);
     rectMode(CENTER);
 
