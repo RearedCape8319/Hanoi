@@ -123,6 +123,6 @@ document.addEventListener("touchstart", e => {
     doStuff();
 })
 
-document.addEventListener("mousedown", e => {
-    doStuff();
-})
+// document.addEventListener("mousedown", e => {
+//     doStuff();
+// })
