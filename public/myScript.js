@@ -108,7 +108,13 @@ function draw() {
  * - Endure the click is valid
  * - Tell the puzzle that a click occured and in what spot
  */
-function doStuff() {
+let pressing = false;
+
+function mousePressed() {
+    if (pressing) {
+        return;
+    }
+    pressing = true;
     let xoff = (width - viewWidth) * 0.5;
     let yoff = (height - viewHeight) * 0.5;
     if (mouseX < xoff || mouseX > width-xoff || mouseY < yoff || mouseY > height-yoff) {
@@ -119,10 +125,6 @@ function doStuff() {
     }
 }
 
-document.addEventListener("touchstart", e => {
-    doStuff();
-})
-
-// document.addEventListener("mousedown", e => {
-//     doStuff();
-// })
+function mouseReleased() {
+    pressing = false;
+}
