@@ -99,6 +99,11 @@ function draw() {
         rect(width/2, height/2, viewWidth, viewHeight);
     }
 
+    // If you win make it 5 discs
+    if (puzzle.pegs[puzzle.pegs.length-1].discs.length == puzzle.discCount) {
+        puzzle = new Hanoi(3, puzzle.discCount + 1);
+    }
+
 }
 
 
